@@ -1,39 +1,126 @@
 # Perspective Studio
 
-Perspective Studio is a Next.js app that analyzes transcripts using three perspectives:
+Perspective Studio is a transcript reasoning workspace built with **Next.js and Ollama**.  
+It analyzes conversations from multiple viewpoints and presents structured insights using three perspectives:
 
-- Optimist
-- Pessimist
-- Moderator
+- **Optimist**
+- **Pessimist**
+- **Moderator**
 
-Users can:
-- paste their own transcript
-- ask a question
-- get structured debate-style answers
-- view result tabs
-- access saved history
+The goal of the tool is to help users better understand discussions, disagreements, and missing evidence within transcripts.
+
+---
+
+## Features
+
+- Paste any transcript (meeting, interview, customer call, etc.)
+- Ask a question about the transcript
+- Generate three reasoning perspectives:
+  - Optimist interpretation
+  - Pessimist interpretation
+  - Moderator synthesis
+- Switch between answers using horizontal result tabs
+- Suggested questions based on transcript context
+- Debate history stored locally in the browser
+
+---
 
 ## Tech Stack
-- Next.js
-- React
-- TypeScript
-- Tailwind CSS
-- Ollama
 
-## Run Locally
+- **Next.js**
+- **React**
+- **TypeScript**
+- **Tailwind CSS**
+- **Ollama (local LLM inference)**
 
-1. Start Ollama:
-   ollama serve
+---
 
-2. Go to the project folder:
-   cd transcript-debate-app
+## Running the Project Locally
 
-3. Start the app:
-   npm run dev
+### 1. Install Ollama
 
-4. Open:
-   http://localhost:3000
+Download Ollama from:
+
+https://ollama.com
+
+---
+
+### 2. Start Ollama
+
+Run:
+
+```bash
+ollama serve
+```
+
+---
+
+### 3. Pull the required model
+
+```bash
+ollama pull llama3.2:3b
+```
+
+---
+
+### 4. Navigate to the project folder
+
+```bash
+cd transcript-debate-app
+```
+
+---
+
+### 5. Install dependencies
+
+```bash
+npm install
+```
+
+---
+
+### 6. Start the development server
+
+```bash
+npm run dev
+```
+
+---
+
+### 7. Open the application
+
+```
+http://localhost:3000
+```
+
+---
+
+## Project Structure
+
+```
+app
+ ├── api
+ │   └── analyze
+ │        └── route.ts
+ ├── page.tsx
+public
+package.json
+README.md
+```
+
+---
 
 ## Notes
-- The project uses a local Ollama model for transcript analysis.
-- History is stored in browser localStorage.
+
+- The application runs **fully locally** using Ollama for inference.
+- The model used for analysis is **llama3.2:3b**.
+- Debate history is stored in the browser using **localStorage**.
+
+---
+
+## Future Improvements
+
+- Export debate results (PDF / Markdown)
+- Shareable debate links
+- Speaker sentiment analysis
+- Multi-transcript comparison
