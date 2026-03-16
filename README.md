@@ -22,6 +22,7 @@ The goal of the tool is to help users better understand discussions, disagreemen
 - Switch between answers using horizontal result tabs
 - Suggested questions based on transcript context
 - Debate history stored locally in the browser
+- Export Debate (Markdown)
 
 ---
 
@@ -120,7 +121,6 @@ README.md
 
 ## Future Improvements
 
-- Export debate results (PDF / Markdown)
 - Shareable debate links
 - Speaker sentiment analysis
 - Multi-transcript comparison
